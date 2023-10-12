@@ -11,7 +11,7 @@
   margin: 20px 0 40px 0;
 }
 
-.new-question-b35
+.new-question-btn
 {
   display: none;
   cursor: pointer;
@@ -80,7 +80,7 @@
     color: white;
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 38%;
     font-family: amatic sc;
   }
