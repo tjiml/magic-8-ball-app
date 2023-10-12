@@ -37,7 +37,9 @@ export default function App() {
     const user_input = document.querySelector('.user-input');
     const reset = document.querySelector('.new-question-btn');
     const reveal_answer_btn = document.querySelector('.reveal-answer-btn');
+    const magic_ball = document.querySelector('.magic-ball-image');
 
+    magic_ball.style.transform = 'translateY(0)';
     answer.innerHTML = "";
     user_input.value = "";
     reset.style.display = 'none';
@@ -48,14 +50,14 @@ export default function App() {
   function shakeBallUp() {
     const magic_ball = document.querySelector('.magic-ball-image');
 
-    magic_ball.style.transform = 'translateY(-50px)';
+    magic_ball.style.transform = 'translateY(-40px)';
   }
 
-  function shakeBallDown() {
-    const magic_ball = document.querySelector('.magic-ball-image');
+  // function shakeBallDown() {
+  //   const magic_ball = document.querySelector('.magic-ball-image');
 
-    magic_ball.style.transform = 'translateY(0)';
-  }
+  //   magic_ball.style.transform = 'translateY(0)';
+  // }
 
   return (
     <>
@@ -67,8 +69,7 @@ export default function App() {
         <input type="text" className="user-input" placeholder="ASK A QUESTION"/>
         <button className="reveal-answer-btn" 
           onClick={reveal_answer}
-          onMouseDown={shakeBallUp}
-          onMouseUp={shakeBallDown}>SHAKE BALL</button>
+          onMouseDown={shakeBallUp}>SHAKE BALL</button>
         <button className="new-question-btn"
           onClick={reset}>ask new question</button>
         <h1 className="answer">hello</h1>
