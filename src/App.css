@@ -19,8 +19,8 @@
 }
 
 .magic-ball-image {
-  width: 480px;
-  height: 500px;
+  width: 450px;
+  height: 470px;
   transition: all 0.5s ease;
 }
 
@@ -62,7 +62,7 @@
   position: absolute;
   font-size: 20px;
   width: 100px;
-  top: 280px;
+  top: 39%;
   left: 46.5%;
   color: white;
   text-align: center;
