@@ -60,7 +60,7 @@ export default function App() {
   return (
     <>
     <div className="container">
-      
+
       <h1 className="title">welcome to the magic 8-ball</h1>
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Magic_eight_ball.png" className="magic-ball-image"/>
         
@@ -68,7 +68,7 @@ export default function App() {
         <button className="reveal-answer-btn" 
           onClick={reveal_answer}
           onMouseDown={shakeBallUp}
-          onMouseUp={shakeBallDown}>HOLD TO SHAKE</button>
+          onMouseUp={shakeBallDown}>SHAKE BALL</button>
         <button className="new-question-btn"
           onClick={reset}>ask new question</button>
         <h1 className="answer">hello</h1>
