@@ -23,7 +23,7 @@ export default function App() {
       setTimeout(() => {
         answer.innerHTML = number_generator();
         answer.style.opacity = '1';
-      }, 2000);
+      }, 2500);
 
       reset.style.display = 'inline';
       reveal_answer_btn.style.display = 'none';
@@ -33,31 +33,23 @@ export default function App() {
 
   function reset() {
 
-    const answer = document.querySelector('.answer');
+    window.location.reload();
+
+  }
+
+  function shake() {
+    const magic_ball = document.querySelector('.magic-ball-image');
     const user_input = document.querySelector('.user-input');
-    const reset = document.querySelector('.new-question-btn');
-    const reveal_answer_btn = document.querySelector('.reveal-answer-btn');
-    const magic_ball = document.querySelector('.magic-ball-image');
+    const error = document.querySelector('.error-text');
 
-    magic_ball.style.transform = 'translateY(0)';
-    answer.innerHTML = "";
-    user_input.value = "";
-    reset.style.display = 'none';
-    reveal_answer_btn.style.display = 'inline';
-
+    if (user_input.value === "") {
+      error.innerHTML = 'ENTER QUESTION!';
+    } else {
+      magic_ball.style.animation = 'shake 0.5s';
+      magic_ball.style.animationIterationCount = '3';
+      error.innerHTML = ""
+    }
   }
-
-  function shakeBallUp() {
-    const magic_ball = document.querySelector('.magic-ball-image');
-
-    magic_ball.style.transform = 'translateY(-40px)';
-  }
-
-  // function shakeBallDown() {
-  //   const magic_ball = document.querySelector('.magic-ball-image');
-
-  //   magic_ball.style.transform = 'translateY(0)';
-  // }
 
   return (
     <>
@@ -66,13 +58,14 @@ export default function App() {
       <h1 className="title">welcome to the magic 8-ball</h1>
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Magic_eight_ball.png" className="magic-ball-image"/>
         
+        <p className="error-text"></p>
         <input type="text" className="user-input" placeholder="ASK A QUESTION"/>
         <button className="reveal-answer-btn" 
           onClick={reveal_answer}
-          onMouseDown={shakeBallUp}>SHAKE BALL</button>
+          onMouseDown={shake}>SHAKE BALL</button>
         <button className="new-question-btn"
           onClick={reset}>ask new question</button>
-        <h1 className="answer">hello</h1>
+        <h1 className="answer"></h1>
      
     </div>
     </>
