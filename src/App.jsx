@@ -38,7 +38,8 @@ export default function App() {
   }
 
   function shake() {
-    const magic_ball = document.querySelector('.magic-ball-image');
+    // const magic_ball = document.querySelector('.magic-ball-image');
+    const magic_ball = document.querySelector('.magic-ball-container');
     const user_input = document.querySelector('.user-input');
     const error = document.querySelector('.error-text');
 
@@ -56,7 +57,12 @@ export default function App() {
     <div className="container">
 
       <h1 className="title">welcome to the magic 8-ball</h1>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Magic_eight_ball.png" className="magic-ball-image"/>
+      {/* <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Magic_eight_ball.png" className="magic-ball-image"/> */}
+        <div className="magic-ball-container">
+            <div className="triangle-container">
+              <h1 className="answer"></h1>
+            </div>
+        </div>
         
         <p className="error-text"></p>
         <input type="text" className="user-input" placeholder="ASK A QUESTION"/>
@@ -65,7 +71,6 @@ export default function App() {
           onMouseDown={shake}>SHAKE BALL</button>
         <button className="new-question-btn"
           onClick={reset}>ask new question</button>
-        <h1 className="answer"></h1>
      
     </div>
     </>
